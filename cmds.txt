@@ -1,0 +1,48 @@
+Restart Web Server,$srv httpd restart
+Restart Proxy Server,$srv nginx restart
+Restart MySQL Server,$srv sendmail restart
+Restart Sendmail Server,$srv cma restart
+Restart Nails; CMA,$srv nails restart;$srv cma restart
+Restart DSMC,$srv tsm-init restart
+Stop Nails;CMA,$srv nails stop;$srv cma stop
+Start Proxy Maintenance,$sct/maint.sh
+Stop Proxy Maintenance,$sct/smaint.sh
+Display Open Ports,netstat -tuapn
+Display Firewall,iptables-save
+Restore Firewall,iptables-restore ~/firewall.def
+CMD9,CMD9
+CMD10,CMD10
+CMD11,CMD11
+CMD12,CMD12
+CMD13,CMD13
+CMD14,CMD14
+Uptime,uptime
+Highest CPU Users,top -n1 | head -n 27 | tail -n 20
+Highest Memory Users,ps aux | sort -n -k4 | tail -n 15
+Who is Logged in,who
+Process Running,ps aux
+Ethernet Interface,ifconfig
+Current Connections,netstat -tun
+Disk Utilization,df -h
+Root Folder Utilization,du -hs `cat /list.txt`
+Home Drive Utilization,du -hs /home/*
+CMD26,CMD26
+CMD27,CMD27
+CMD28,CMD28
+CMD29,CMD29
+CMD30,CMD30
+15 Last Logins,last | head -n 15
+15 Last DMESG,dmesg | tail -n 15
+15 Last Security,tail -n 15 /var/log/secure
+15 Last Maillog,tail -n 15 /var/log/maillog
+15 Last Messages,tail -n 15 /var/log/messages
+15 Last MySQL Log,tail -n 15 /var/log/mysql.log
+CMD37,
+CMD38,
+CMD39,
+CMD40,
+CMD41,
+CMD42,
+CMD43,
+CMD44, 
+Reboot Server,shutdown -r "now"
